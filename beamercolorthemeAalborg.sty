@@ -1,0 +1,33 @@
+% This is the color theme file of the Aalborg theme.
+% Copyright (c) 2012 by Jesper Kjær Nielsen <jkn@es.aau.dk>
+%
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemeAalborg}[2012/01/17 v0.1.1 The Aalborg Beamer Theme]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theme options and definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%beamer specific options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>%refers to the first four modes (beamer,handout,second and trans). That is, to all modes except the article mode
+{
+  \definecolor{beamer@barcolor}{rgb}{0.55,0.79,0.94}% light blue
+  \definecolor{beamer@headercolor}{rgb}{0.00,0.41,0.66}% dark blue
+  \setbeamercolor{structure}{fg=beamer@headercolor}
+  \setbeamercolor{Aalborg}{fg=beamer@barcolor,bg=beamer@headercolor}
+}%end of beamer specific options
+
+\mode<all>

@@ -283,13 +283,18 @@
 \subsection{开发者手册与用例}
 \begin{frame}{开发者手册}{}
   \begin{block}{}{\alert<1>{OSSC 为开发者提供了丰富的文档和大量的示例\\}}\end{block}
+  \pause
   \begin{itemize}[<+- | alert@+>]
     \item OSSC 的开发者文档位于 {\tt doc/html} 中，强烈建议开发者首先与读相关页面，加深对 OSSC 的理解。
+	\item OSSC 目前提供的开发者手册包括《OSSC 介绍》，《OSSC 安装步骤》，《OSSC 编码规范》，《OSSC 实现原理》，《高级模块 Extra 库》，《API 使用示例》以及由 \emph{\tt Doxygen} 生成的 API 索引。
 	\item 示例代码位于 {\tt example} 目录中，默认情况下，编译 OSSC 会为各个示例生成可执行文件，
 		可执行文件位于 {\tt build/example} 目录中。
   \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%
+\begin{frame}{开发者手册}{}
+  \begin{center} \includegraphics[width=1.0\textwidth]{ossc-api-example.png} \end{center}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{OSS C SDK 高级特性}
 %%%%%%%%%%%%%%%%
@@ -315,6 +320,18 @@
 	  \end{lstlisting}
     \end{block}
   \end{footnotesize}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\begin{frame}{多线程断点上传}{}
+  \begin{block}{}{\alert<1>{多线程断点上传实现原理}}\end{block}
+  \begin{itemize}
+    \hilite<2> \item OSSC 实现了一个简洁的线程池，池中默认线程数目为 4。
+	\hilite<3> \item{多线程上传过程中主线程会在当前目录下创建一个文件夹，
+	用于保存 Upload ID 和已成功上传文件块的元信息，
+	上传成功后该文件夹将被删除。}
+	\hilite<4> \item 如果某次上传过程被中断，再次启动上传时不会重复上传先前已成功上传的文件块。
+  \end{itemize}
+  \pause
 \end{frame}
 %%%%%%%%%%%%%%%%
 \subsection{可扩展压缩文件格式}
